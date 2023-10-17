@@ -6,32 +6,30 @@ const Footer = () => {
     const { user } = useContext(AuthContext);
     const links = (
         <>
-            <>
-                <li className="mr-5 font-semibold">
-                    <NavLink to="/">Home</NavLink>
-                </li>
-                <li className="mr-5 font-semibold">
-                    <NavLink to="/about">About</NavLink>
-                </li>
-                <li className="mr-5 font-semibold">
-                    <NavLink to="/portfolio">Portfolio</NavLink>
-                </li>
-                {user && (
-                    <>
-                        <li className="mr-5 font-semibold">
-                            <NavLink to="/HotDeals">Hot Deals</NavLink>
-                        </li>
-                        <li className="mr-5 font-semibold">
-                            <NavLink to="/Wishlist">Wishlist</NavLink>
-                        </li>
-                    </>
-                )}
-            </>
+            <li className="mr-5 font-semibold">
+                <NavLink to="/">Home</NavLink>
+            </li>
+            <li className="mr-5 font-semibold">
+                <NavLink to="/about">About</NavLink>
+            </li>
+            <li className="mr-5 font-semibold">
+                <NavLink to="/products">Products</NavLink>
+            </li>
+            {user && (
+                <>
+                    <li className="mr-5 font-semibold">
+                        <NavLink to="/HotDeals">Hot Deals</NavLink>
+                    </li>
+                    <li className="mr-5 font-semibold">
+                        <NavLink to="/Wishlist">Wishlist</NavLink>
+                    </li>
+                </>
+            )}
         </>
     );
     return (
         <div>
-            <footer className="footer footer-center p-10 bg-[#30292f] text-white font-semibold">
+            <footer className="footer footer-center p-10 bg-[#000814] text-white font-semibold">
                 <div className="grid grid-cols-3 md:grid-flow-col  gap-4 font-semibold text-base list-none">
                     {links}
                 </div>
@@ -73,7 +71,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <aside>
-                    <p>Copyright © 2023 - All right reserved by Elegant Wedding.</p>
+                    <p>Copyright © 2023 - All right reserved by EShop.</p>
                 </aside>
             </footer>
         </div>
