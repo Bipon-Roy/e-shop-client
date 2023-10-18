@@ -18,15 +18,16 @@ const Footer = () => {
             {user && (
                 <>
                     <li className="mr-5 font-semibold">
-                        <NavLink to="/HotDeals">Hot Deals</NavLink>
+                        <NavLink to="/HotDeals">Add Product</NavLink>
                     </li>
                     <li className="mr-5 font-semibold">
-                        <NavLink to="/Wishlist">Wishlist</NavLink>
+                        <NavLink to="/My Cart">Wishlist</NavLink>
                     </li>
                 </>
             )}
         </>
     );
+
     return (
         <div>
             <footer className="footer footer-center p-10 font-semibold">

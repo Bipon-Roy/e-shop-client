@@ -1,4 +1,7 @@
 const Banner = () => {
+    const style = {
+        borderRadius: "65% 35% 43% 57% / 36% 35% 65% 64%",
+    };
     return (
         <div>
             <div className="max-w-7xl mx-auto flex items-center ">
@@ -12,9 +15,9 @@ const Banner = () => {
                             powerful smartphones. Embrace the future of innovation.
                         </p>
                     </div>
-                    <div className="bg-[#edf6f9] rounded-full">
+                    <div style={style} className="bg-[#edf6f9] rounded-full">
                         <img
-                            className="py-7 px-5"
+                            className="py-10 px-8"
                             src="https://i.ibb.co/LJL7Yrp/1-removebg-preview.png"
                             alt="HeroImage"
                         />
