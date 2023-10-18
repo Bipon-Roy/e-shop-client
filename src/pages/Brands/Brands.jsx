@@ -22,7 +22,7 @@ const Brands = () => {
                 <div className="grid grid-cols-3 gap-4 mt-8">
                     {brands.map((brand) => (
                         <div key={brand._id}>
-                            <Link>
+                            <Link to={`/products/${brand.brandName}`}>
                                 <div className=" border border-gray-300 rounded-xl">
                                     <div className="flex justify-center">
                                         <img

@@ -16,25 +16,25 @@ const AddProduct = () => {
 
         console.log(newProduct);
 
-        // fetch("https://coffee-store-server-tau-peach.vercel.app/coffee", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(newProduct),
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 title: "Success!",
-        //                 text: "Coffee Item Added Successfully",
-        //                 icon: "success",
-        //                 confirmButtonText: "Done!",
-        //             });
-        //         }
-        //     });
+        fetch("http://localhost:5000/products", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(newProduct),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Product Added Successfully",
+                        icon: "success",
+                        confirmButtonText: "Done!",
+                    });
+                }
+            });
     };
     return (
         <div className="max-w-7xl mx-auto">
