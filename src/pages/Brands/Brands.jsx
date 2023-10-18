@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Brands = () => {
     const [brands, setBrands] = useState([]);
@@ -21,20 +22,22 @@ const Brands = () => {
                 <div className="grid grid-cols-3 gap-4 mt-8">
                     {brands.map((brand) => (
                         <div key={brand._id}>
-                            <div className=" border border-gray-300 rounded-xl">
-                                <div className="flex justify-center">
-                                    <img
-                                        className=" w-[450px] h-[230px] "
-                                        src={brand.photoUrl}
-                                        alt=""
-                                    />
+                            <Link>
+                                <div className=" border border-gray-300 rounded-xl">
+                                    <div className="flex justify-center">
+                                        <img
+                                            className=" w-[450px] h-[230px] "
+                                            src={brand.photoUrl}
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="m-2 flex justify-center">
+                                        <p className="bg-[#bf0603] px-6 py-1 rounded-md font-semibold text-white w-fit">
+                                            {brand.brandName}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="m-2">
-                                    <p className="bg-[#bf0603] px-6 py-1 rounded-md text-white w-fit">
-                                        {brand.brandName}
-                                    </p>
-                                </div>
-                            </div>
+                            </Link>
                         </div>
                     ))}
                 </div>
