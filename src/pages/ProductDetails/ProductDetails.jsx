@@ -1,12 +1,42 @@
-import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Ratings from "../Products/Ratings";
 import { BiArrowBack } from "react-icons/bi";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 const ProductDetails = () => {
+    const { user } = useContext(AuthContext);
     const products = useLoaderData();
     const { id } = useParams();
     const product = products.find((card) => card._id === id);
-    const { photo, name, brandName, price, ratings, shortDesc } = product;
+    const { name, brandName, type, price, shortDesc, ratings, photo } = product;
     const navigate = useNavigate();
+
+    const handleAddToCart = () => {
+        console.log(user.email);
+        const userEmail = user.email;
+
+        const cartItem = { userEmail, name, brandName, type, price, shortDesc, ratings, photo };
+        fetch("http://localhost:5000/cart", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(cartItem),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Product Successfully Added!",
+                        icon: "success",
+                        confirmButtonText: "Done!",
+                    });
+                }
+            });
+    };
     return (
         <div className="max-w-7xl mx-auto">
             <div className="flex mx-6 lg:mx-0 mt-12 gap-10">
@@ -18,7 +48,7 @@ const ProductDetails = () => {
                         <p className="text-3xl text-[#bf0603] font-semibold">{name}</p>
                         <button
                             onClick={() => navigate(-1)}
-                            className=" text-xl bg-[#bf0603] text-white rounded-full p-2"
+                            className=" text-lg bg-[#bf0603] text-white p-2 rounded-full"
                         >
                             <BiArrowBack />
                         </button>
@@ -33,9 +63,14 @@ const ProductDetails = () => {
                         manufacturer&apos;s warranty
                     </p>
                     <div className="pt-10">
-                        <button className="py-2 w-1/2 bg-[#bf0603] font-medium text-white rounded">
-                            Add to Cart
-                        </button>
+                        <Link>
+                            <button
+                                onClick={handleAddToCart}
+                                className="py-2 w-1/2 bg-[#bf0603] font-medium text-white rounded"
+                            >
+                                Add to Cart
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const Brands = () => {
                     Available <span className="text-[#bf0603]">Brands</span>
                 </h1>
                 <div className="h-[5px] my-2 w-24 bg-[#bf0603] rounded flex justify-center mx-auto"></div>
-                <div className="grid grid-cols-3 gap-4 mt-8">
+                <div className="grid grid-cols-3 gap-6 my-12">
                     {brands.map((brand) => (
                         <div key={brand._id}>
                             <Link to={`/products/${brand.brandName}`}>

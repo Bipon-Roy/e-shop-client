@@ -24,16 +24,14 @@ const Navbar = () => {
             <li className="mr-5 font-semibold">
                 <NavLink to="/about">About</NavLink>
             </li>
-            <li className="mr-5 font-semibold">
-                <NavLink to="/products">Products</NavLink>
-            </li>
+
             {user && (
                 <>
                     <li className="mr-5 font-semibold">
                         <NavLink to="/addProducts">Add Product</NavLink>
                     </li>
                     <li className="mr-5 font-semibold">
-                        <NavLink to="/My Cart">Wishlist</NavLink>
+                        <NavLink to="/cart">Cart</NavLink>
                     </li>
                 </>
             )}

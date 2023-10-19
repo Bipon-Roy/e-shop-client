@@ -34,7 +34,6 @@ const Register = () => {
             .then(() => {
                 handleUpdateProfile(name, photoURL);
                 swal("Welcome!", "Registration Successful!", "success");
-
                 route("/");
                 window.location.reload();
             })

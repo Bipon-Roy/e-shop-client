@@ -4,6 +4,7 @@ import ProductCard from "./ProductCard";
 
 const Products = () => {
     const products = useLoaderData();
+
     const { brandName } = useParams();
     const newProducts = products.filter((product) => product.brandName === brandName);
     const isTrue = newProducts.length === 0;
@@ -21,11 +22,7 @@ const Products = () => {
             ) : (
                 <div className="grid md:grid-cols-2 gap-4 mt-10">
                     {newProducts.map((cards) => (
-                        <ProductCard
-                            key={cards._id}
-                            newProducts={newProducts}
-                            cards={cards}
-                        ></ProductCard>
+                        <ProductCard key={cards._id} cards={cards}></ProductCard>
                     ))}
                 </div>
             )}
