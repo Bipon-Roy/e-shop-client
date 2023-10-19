@@ -44,7 +44,7 @@ const Register = () => {
     };
     return (
         <div className="max-w-7xl mx-auto flex justify-center">
-            <div className="my-6 border-2 px-8 py-10 w-[400px] md:w-[600px]">
+            <div className="my-6 px-8 py-10 w-[400px] md:w-[600px] bg-white rounded shadow-lg">
                 <form className="mx-auto space-y-4" onSubmit={handleRegister}>
                     <h1 className="font-bold text-lg">Register Here</h1>
                     <div className="form-control">
@@ -92,14 +92,14 @@ const Register = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <button className=" py-2 bg-[#5a189a] font-medium text-white w-full rounded">
+                        <button className=" py-2 bg-[#284b63] font-medium text-white w-full rounded">
                             Register
                         </button>
                     </div>
 
-                    <div className="font-semibold flex justify-between">
+                    <div className="font-semibold flex justify-between text-lg">
                         Already have an account?
-                        <Link to="/login" className="underline text-[#5a189a]">
+                        <Link to="/login" className="underline text-[#0353a4]">
                             Login Here
                         </Link>
                     </div>

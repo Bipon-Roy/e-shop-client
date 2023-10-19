@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Slider from "./Slider";
 import ProductCard from "./ProductCard";
+import Navbar from "../Shared/Navbar/Navbar";
 
 const Products = () => {
     const products = useLoaderData();
@@ -19,7 +20,7 @@ const Products = () => {
                     </h1>
                 </div>
             ) : (
-                <div className="grid grid-cols-2 gap-4 mt-10">
+                <div className="grid md:grid-cols-2 gap-4 mt-10">
                     {newProducts.map((cards) => (
                         <ProductCard
                             key={cards._id}
