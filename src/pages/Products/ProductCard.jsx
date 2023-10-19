@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import Ratings from "./Ratings";
 import { RxUpdate } from "react-icons/rx";
 const ProductCard = ({ cards }) => {
@@ -42,4 +43,7 @@ const ProductCard = ({ cards }) => {
     );
 };
 
+ProductCard.propTypes = {
+    cards: PropTypes.object.isRequired,
+};
 export default ProductCard;

@@ -1,16 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import CartsCard from "./CartsCard";
 
 const Cart = () => {
     const cartList = useLoaderData();
-    console.log(cartList);
     const { user } = useContext(AuthContext);
 
     const newCartList = cartList.filter((product) => product.userEmail === user.email);
     const isTrue = newCartList.length === 0;
-
+    const [renderCart, setRenderCart] = useState(newCartList);
     return (
         <div className="mx-auto max-w-7xl">
             {isTrue ? (
@@ -21,8 +20,13 @@ const Cart = () => {
                 </div>
             ) : (
                 <div className="grid md:grid-cols-2 gap-5 mt-10">
-                    {newCartList.map((cards) => (
-                        <CartsCard key={cards._id} cards={cards}></CartsCard>
+                    {renderCart.map((cards) => (
+                        <CartsCard
+                            key={cards._id}
+                            cards={cards}
+                            renderCart={renderCart}
+                            setRenderCart={setRenderCart}
+                        ></CartsCard>
                     ))}
                 </div>
             )}

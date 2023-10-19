@@ -1,7 +1,40 @@
+import PropTypes from "prop-types";
 import { AiFillDelete } from "react-icons/ai";
 import Ratings from "../Products/Ratings";
-const CartsCard = ({ cards }) => {
-    const { photo, name, brandName, type, price, ratings, shortDesc } = cards;
+import Swal from "sweetalert2";
+
+const CartsCard = ({ cards, renderCart, setRenderCart }) => {
+    console.log(typeof setRenderCart);
+    const { _id, photo, name, brandName, type, price, ratings, shortDesc } = cards;
+
+    const handleDeleteProduct = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/cart/${id}`, {
+                    method: "DELETE",
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount > 0) {
+                            console.log("deleted successfully");
+                            Swal.fire("Deleted!", "Cart Item has been deleted.", "success");
+                            // remove the user from the UI
+                            const remainingCards = renderCart.filter((user) => user._id !== id);
+                            console.log(remainingCards);
+                            setRenderCart(remainingCards);
+                        }
+                    });
+            }
+        });
+    };
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl p-4 lg:gap-5 mx-6 lg:mx-0">
@@ -22,7 +55,10 @@ const CartsCard = ({ cards }) => {
                             <button className="bg-[#403D39] px-[27px] py-1 rounded text-white font-medium ">
                                 Buy Now
                             </button>
-                            <button className="bg-[#c1121f] px-4 py-1 rounded text-white font-medium">
+                            <button
+                                onClick={() => handleDeleteProduct(_id)}
+                                className="bg-[#c1121f] px-4 py-1 rounded text-white font-medium"
+                            >
                                 <span className="flex items-center gap-1">
                                     Delete <AiFillDelete className="text-xl" />
                                 </span>
@@ -34,5 +70,9 @@ const CartsCard = ({ cards }) => {
         </div>
     );
 };
-
+CartsCard.propTypes = {
+    cards: PropTypes.object.isRequired,
+    renderCart: PropTypes.array.isRequired,
+    setRenderCart: PropTypes.func.isRequired,
+};
 export default CartsCard;
