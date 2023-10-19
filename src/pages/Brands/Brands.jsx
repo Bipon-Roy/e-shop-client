@@ -9,7 +9,6 @@ const Brands = () => {
             .then((res) => res.json())
             .then((data) => {
                 setBrands(data);
-                console.log(data);
             });
     }, []);
     return (
