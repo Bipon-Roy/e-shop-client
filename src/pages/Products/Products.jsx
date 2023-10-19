@@ -1,7 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Slider from "./Slider";
 import ProductCard from "./ProductCard";
-import Navbar from "../Shared/Navbar/Navbar";
 
 const Products = () => {
     const products = useLoaderData();

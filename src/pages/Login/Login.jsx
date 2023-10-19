@@ -90,17 +90,17 @@ const Login = () => {
                 <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between">
                     <button
                         onClick={() => handleSocialSignIn(signInWithGoogle)}
-                        className="font-semibold flex gap-4 px-4 py-2 bg-white rounded-3xl items-center relative"
+                        className="font-semibold flex gap-4 px-4 py-2 bg-white rounded-3xl items-center relative border-2"
                     >
                         Continue With Google
                         <FcGoogle className=" text-3xl" />
                     </button>
                     <button
                         onClick={() => handleSocialSignIn(signInWithGithub)}
-                        className="font-semibold flex gap-4 px-4 py-2 bg-[#0353a4] rounded-3xl items-center text-white"
+                        className="font-semibold flex gap-4 px-4 py-2 border-2 bg-white rounded-3xl items-center "
                     >
                         Continue With Facebook
-                        <FaFacebook className="text-3xl" />
+                        <FaFacebook className="text-3xl text-[#4361ee]" />
                     </button>
                 </div>
             </div>

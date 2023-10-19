@@ -52,6 +52,7 @@ const routes = createBrowserRouter([
                         <ProductDetails />
                     </PrivateRoutes>
                 ),
+                loader: () => fetch("http://localhost:5000/products"),
             },
         ],
     },

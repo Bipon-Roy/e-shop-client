@@ -23,7 +23,7 @@ const ProductCard = ({ cards }) => {
                     <div className="card-actions">
                         <div className="btn-group btn-group-vertical space-y-4 mt-4 lg:mt-0">
                             <Link to={`/productDetails/${_id}`}>
-                                <button className="bg-[#e63946] px-4 py-1 rounded text-white font-medium ">
+                                <button className="bg-[#e63946] px-[27px] py-1 rounded text-white font-medium ">
                                     Details
                                 </button>
                             </Link>
