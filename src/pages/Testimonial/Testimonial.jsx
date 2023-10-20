@@ -8,8 +8,8 @@ const Testimonial = () => {
                     Client <span className="text-[#bf0603] ">Reviews</span>
                 </h1>
                 <div className="mt-2 w-20 pt-[5px] bg-[#bf0603]  rounded flex justify-center mx-auto"></div>
-                <div className="grid grid-cols-1 mx-5 lg:mx-0 md:grid-cols-2 lg:grid-cols-3 gap-y-8 pt-8">
-                    <div className=" shadow-xl bg-white w-96">
+                <div className="grid grid-cols-1 mx-5 lg:mx-0 md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-0 gap-y-8 pt-8">
+                    <div className=" shadow-xl bg-white lg:w-96">
                         <figure className="">
                             <img
                                 src="https://i.ibb.co/zJwdbNn/1-3.jpg"
@@ -33,7 +33,7 @@ const Testimonial = () => {
                         </div>
                     </div>
 
-                    <div className=" shadow-xl bg-white w-96">
+                    <div className=" shadow-xl bg-white lg:w-96">
                         <figure className="">
                             <img
                                 src="https://i.ibb.co/W2v9TJ4/1-1.jpg"
@@ -57,7 +57,7 @@ const Testimonial = () => {
                         </div>
                     </div>
 
-                    <div className=" shadow-xl bg-white w-96">
+                    <div className=" shadow-xl bg-white lg:w-96">
                         <figure className="">
                             <img
                                 src="https://i.ibb.co/Tv0gDsT/1-4.jpg"
@@ -81,7 +81,7 @@ const Testimonial = () => {
                         </div>
                     </div>
 
-                    <div className=" shadow-xl bg-white w-96">
+                    <div className=" shadow-xl bg-white lg:w-96">
                         <figure className="">
                             <img
                                 src="https://i.ibb.co/6tQFTz3/1-2.jpg"
@@ -105,7 +105,7 @@ const Testimonial = () => {
                         </div>
                     </div>
 
-                    <div className=" shadow-xl bg-white w-96">
+                    <div className=" shadow-xl bg-white lg:w-96">
                         <figure className="">
                             <img
                                 src="https://i.ibb.co/zGSkgL8/people-1.jpg"
@@ -129,7 +129,7 @@ const Testimonial = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=" shadow-xl bg-white w-96">
+                    <div className=" shadow-xl bg-white lg:w-96">
                         <figure className="">
                             <img
                                 src="https://i.ibb.co/SxB8wdD/people-2.jpg"
