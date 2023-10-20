@@ -1,8 +1,24 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Brand Shop(eShop)
 
-Currently, two official plugins are available:
+The Brand Shop project is about selling electronic products like phone,laptop,headphones and smartwatches. It's built with React (including React Router) Tailwind, Node, MongoDb and Firebase Authentication.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Live_Link: https://eshop-31def.web.app/
+
+
+## Project Features
+
+- Displayed a variety of Electronics products based on Brand name inside a card.
+- Users can see all the specific details of the Products by simply clicking the details button.
+
+- Users can add new products and if needed they can update the product information.
+
+- Users can add product to cart and the can see the added product on the cart page and the data is stored in database.If they want the can delete a product from their cart section.
+
+- Users can also sign in with social login methods like Google or Facebook.
+
+- After a successful login, users can see their name and profile picture in the header.
+
+- The project supports both login and logout functionality.
+
+- Users can navigate pages with a smooth UI experience.
