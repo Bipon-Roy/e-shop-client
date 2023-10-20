@@ -16,7 +16,7 @@ const AddProduct = () => {
 
         console.log(newProduct);
 
-        fetch("https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/products", {
+        fetch("https://brand-shop-server-sepia.vercel.app/brands", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -39,7 +39,7 @@ const AddProduct = () => {
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="max-w-7xl mx-auto">
-                <div className="px-24 py-12 bg-[#ccc5b9] dark:bg-white text-[#22223b]">
+                <div className="px-6 md:px-24 py-12 bg-[#ccc5b9] dark:bg-white text-[#22223b]">
                     <h2 className="text-3xl font-extrabold mb-4 text-center">Add Products</h2>
                     <form onSubmit={handleAddProduct}>
                         {/* form name and quantity row */}

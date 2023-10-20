@@ -41,16 +41,13 @@ const UpdateProduct = () => {
 
         console.log(updateProduct);
 
-        fetch(
-            `https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/products/${_id}`,
-            {
-                method: "PUT",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: JSON.stringify(updateProduct),
-            }
-        )
+        fetch(`https://brand-shop-server-sepia.vercel.app/brands/${_id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(updateProduct),
+        })
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
@@ -67,12 +64,12 @@ const UpdateProduct = () => {
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="max-w-7xl mx-auto">
-                <div className="px-24 py-12 bg-[#ccc5b9] dark:bg-white text-[#22223b] relative">
+                <div className="px-6 md:px-24 py-12 bg-[#ccc5b9] dark:bg-white text-[#22223b] relative">
                     <h2 className="text-3xl font-extrabold mb-4 text-center">Update Product</h2>
                     <form onSubmit={handleUpdateProduct}>
                         {/* form name and quantity row */}
                         <div className="md:flex mb-8">
-                            <div className="form-control md:w-1/2">
+                            <div className="form-control  md:w-1/2">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Product Name
@@ -87,7 +84,7 @@ const UpdateProduct = () => {
                                     className="input  w-full dark:text-white font-semibold bg-white dark:bg-[#0d1321]"
                                 />
                             </div>
-                            <div className="form-control md:w-1/2 md:ml-4">
+                            <div className="form-control  md:w-1/2 md:ml-4">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Brand Name
@@ -104,7 +101,7 @@ const UpdateProduct = () => {
                         </div>
                         {/* form supplier row */}
                         <div className="md:flex mb-8">
-                            <div className="form-control md:w-1/2">
+                            <div className="form-control  md:w-1/2">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Product Type
@@ -124,7 +121,7 @@ const UpdateProduct = () => {
                                     <option value="Headphones">Headphones</option>
                                 </select>
                             </div>
-                            <div className="form-control md:w-1/2 md:ml-4">
+                            <div className="form-control  md:w-1/2 md:ml-4">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Price
@@ -142,7 +139,7 @@ const UpdateProduct = () => {
                         </div>
                         {/* form category and details row */}
                         <div className="md:flex mb-8">
-                            <div className="form-control md:w-1/2">
+                            <div className="form-control  md:w-1/2">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Short Description
@@ -157,7 +154,7 @@ const UpdateProduct = () => {
                                     className="input input-bordered w-full dark:text-white font-semibold bg-white dark:bg-[#0d1321]"
                                 />
                             </div>
-                            <div className="form-control md:w-1/2 md:ml-4">
+                            <div className="form-control  md:w-1/2 md:ml-4">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Ratings
