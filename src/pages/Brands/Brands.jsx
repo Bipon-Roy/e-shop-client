@@ -17,7 +17,7 @@ const Brands = () => {
                 <h1 className="text-4xl font-bold text-center">
                     Available <span className="text-[#bf0603]">Brands</span>
                 </h1>
-                <div className="h-[5px] py-2 w-24 bg-[#bf0603] rounded flex justify-center mx-auto"></div>
+                <div className="mt-2 pt-[6px] w-24 bg-[#bf0603] rounded flex justify-center mx-auto"></div>
                 <div className="grid grid-cols-3 gap-6 py-12">
                     {brands.map((brand) => (
                         <div key={brand._id}>

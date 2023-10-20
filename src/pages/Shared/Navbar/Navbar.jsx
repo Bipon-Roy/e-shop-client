@@ -4,9 +4,12 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import logo from "../../../assets/logo.png";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
+
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState(() => {
+        return localStorage.getItem("theme") || "light";
+    });
     const handleLogout = () => {
         logOut()
             .then((result) => {
@@ -23,6 +26,7 @@ const Navbar = () => {
         } else {
             document.documentElement.classList.remove("dark");
         }
+        localStorage.setItem("theme", theme);
     }, [theme]);
 
     const handleDarkMood = () => {
@@ -73,7 +77,7 @@ const Navbar = () => {
                         </label>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white dark:text-black rounded-box w-52"
                         >
                             {links}
                         </ul>
@@ -89,7 +93,11 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div>
                         <button onClick={handleDarkMood}>
-                            <MdDarkMode className="text-3xl mr-4" />
+                            {theme === "dark" ? (
+                                <MdOutlineLightMode className="text-3xl mr-4" />
+                            ) : (
+                                <MdDarkMode className="text-3xl mr-4" />
+                            )}
                         </button>
                     </div>
                     <div className="w-12 mr-2  md:mr-5">

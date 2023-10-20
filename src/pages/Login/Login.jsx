@@ -42,8 +42,11 @@ const Login = () => {
     };
 
     return (
-        <div className="max-w-7xl mx-auto flex justify-center">
-            <div className="my-6  px-8 py-10 w-[400px] md:w-[650px] bg-white rounded shadow-lg">
+        <div className="flex justify-center dark:bg-[#0d1321] ">
+            <div
+                className="my-6  px-8 py-10 w-[400px] md:w-[650px] bg-white rounded shadow shadow-black dark:shadow-white
+            dark:shadow-md"
+            >
                 <form className="mx-auto space-y-4" onSubmit={handleLogin}>
                     <h1 className="font-bold text-xl text-[#22223b]">Login Here</h1>
                     <div className="form-control">
@@ -51,7 +54,7 @@ const Login = () => {
                             name="email"
                             type="email"
                             placeholder="email"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full bg-white"
                             required
                         />
                     </div>
@@ -61,7 +64,7 @@ const Login = () => {
                             name="password"
                             type={showPassword ? "text" : "password"}
                             placeholder="Password"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full bg-white"
                             required
                         />
                         <span

@@ -2,11 +2,11 @@ const About = () => {
     return (
         <div className="dark:bg-[#0d1321] text-white">
             <div className="max-w-7xl mx-auto pt-3">
-                <h1 className="text-center font-semibold text-4xl">
+                <h1 className="text-center font-semibold text-4xl text-[#001219] dark:text-white">
                     About <span className="text-[#bf0603] ">Us</span>
                 </h1>
-                <div className="h-[5px] w-20 pt-2 bg-[#bf0603]  rounded flex justify-center mx-auto"></div>
-                <div className="grid lg:grid-cols-2 gap-8 pt-8 pb-10 mx-5 ">
+                <div className="mt-2 w-20 pt-[5px] bg-[#bf0603]  rounded flex justify-center mx-auto"></div>
+                <div className="grid lg:grid-cols-2 gap-8 pt-8 pb-10 mx-5 lg:mx-0 ">
                     <div className="">
                         <img
                             src="https://i.ibb.co/hMJG5k5/e-commerce-vn-546.jpg"

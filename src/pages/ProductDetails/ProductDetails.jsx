@@ -9,14 +9,23 @@ const ProductDetails = () => {
     const products = useLoaderData();
     const { id } = useParams();
     const product = products.find((card) => card._id === id);
-    const { name, brandName, type, price, shortDesc, ratings, photo } = product;
+    const { name, brandName, type, price, shortDesc, ratings, photo, desc, keyFeature } = product;
     const navigate = useNavigate();
 
     const handleAddToCart = () => {
         console.log(user.email);
         const userEmail = user.email;
 
-        const cartItem = { userEmail, name, brandName, type, price, shortDesc, ratings, photo };
+        const cartItem = {
+            userEmail,
+            name,
+            brandName,
+            type,
+            price,
+            shortDesc,
+            ratings,
+            photo,
+        };
         fetch("http://localhost:5000/cart", {
             method: "POST",
             headers: {
@@ -60,14 +69,20 @@ const ProductDetails = () => {
                         <p className="text-[#bf0603] font-bold rounded-lg ">Price: {price}</p>
                         <Ratings ratings={ratings}></Ratings>
                         <p>
-                            <span className="font-semibold">Warranty Policy:</span> 1-year
+                            <span className="font-bold">Description:</span> {desc}
+                        </p>
+                        <p>
+                            <span className="font-bold">Key Feature:</span> {keyFeature}
+                        </p>
+                        <p>
+                            <span className="font-bold">Warranty Policy:</span> 1-year
                             manufacturer&apos;s warranty
                         </p>
                         <div className="pt-10">
                             <Link>
                                 <button
                                     onClick={handleAddToCart}
-                                    className="py-2 w-1/2 bg-[#bf0603] font-medium text-white rounded"
+                                    className="py-2 w-full bg-[#bf0603] font-medium text-white rounded"
                                 >
                                     Add to Cart
                                 </button>

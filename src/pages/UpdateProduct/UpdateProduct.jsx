@@ -4,7 +4,8 @@ import Swal from "sweetalert2";
 import { BiArrowBack } from "react-icons/bi";
 const UpdateProduct = () => {
     const product = useLoaderData();
-    const { _id, name, brandName, type, price, shortDesc, ratings, photo } = product;
+    const { _id, name, brandName, type, price, shortDesc, ratings, photo, keyFeature, desc } =
+        product;
 
     const [typeValue, setTypeValue] = useState(type);
     const navigate = useNavigate();
@@ -22,8 +23,21 @@ const UpdateProduct = () => {
         const shortDesc = form.shortDesc.value;
         const ratings = form.ratings.value;
         const photo = form.photo.value;
+        const desc = form.desc.value;
+        const keyFeature = form.keyFeature.value;
 
-        const updateProduct = { _id, name, brandName, type, price, shortDesc, ratings, photo };
+        const updateProduct = {
+            _id,
+            name,
+            brandName,
+            type,
+            price,
+            shortDesc,
+            ratings,
+            photo,
+            desc,
+            keyFeature,
+        };
 
         console.log(updateProduct);
 
@@ -172,6 +186,41 @@ const UpdateProduct = () => {
                                 />
                             </div>
                         </div>
+
+                        <div className="mb-8">
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Key Feature
+                                    </span>
+                                </label>
+                                <input
+                                    defaultValue={keyFeature}
+                                    type="text"
+                                    name="keyFeature"
+                                    placeholder="keyFeature"
+                                    className="input input-bordered w-full dark:text-white font-semibold bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
+                        </div>
+
+                        <div className="mb-8">
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Description
+                                    </span>
+                                </label>
+                                <input
+                                    defaultValue={desc}
+                                    type="text"
+                                    name="desc"
+                                    placeholder="desc"
+                                    className="input input-bordered w-full dark:text-white font-semibold bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
+                        </div>
+
                         <input
                             type="submit"
                             value="Update Product"

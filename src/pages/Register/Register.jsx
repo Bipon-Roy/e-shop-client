@@ -42,8 +42,11 @@ const Register = () => {
             });
     };
     return (
-        <div className="max-w-7xl mx-auto flex justify-center">
-            <div className="my-6 px-8 py-10 w-[400px] md:w-[600px] bg-white rounded shadow-lg">
+        <div className="flex justify-center dark:bg-[#0d1321]">
+            <div
+                className="my-6 px-8 py-10 w-[400px] md:w-[600px] bg-white rounded shadow shadow-black dark:shadow-white
+            dark:shadow-md"
+            >
                 <form className="mx-auto space-y-4" onSubmit={handleRegister}>
                     <h1 className="font-bold text-lg">Register Here</h1>
                     <div className="form-control">
@@ -51,7 +54,7 @@ const Register = () => {
                             name="name"
                             type="text"
                             placeholder="Your Name"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full bg-white"
                             required
                         />
                     </div>
@@ -60,7 +63,7 @@ const Register = () => {
                             name="photoURL"
                             type="text"
                             placeholder="Photo URL"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full  bg-white"
                             required
                         />
                     </div>
@@ -69,7 +72,7 @@ const Register = () => {
                             name="email"
                             type="email"
                             placeholder="Email"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full bg-white"
                             required
                         />
                     </div>
@@ -79,7 +82,7 @@ const Register = () => {
                             name="password"
                             type={showPassword ? "text" : "password"}
                             placeholder="Password"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full bg-white"
                             required
                         />
                         <span
