@@ -7,7 +7,7 @@ const AddBrands = () => {
         const photoUrl = form.photoUrl.value;
         const newBrands = { brandName, photoUrl };
 
-        fetch("http://localhost:5000/brands", {
+        fetch("https://brand-shop-server-sepia.vercel.app/brands", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { AiOutlineStar } from "react-icons/ai";
+import PropTypes from "prop-types";
 const Ratings = ({ ratings }) => {
     const ratingStar = Array.from({ length: 5 }, (element, index) => {
         let number = index;
@@ -7,5 +8,7 @@ const Ratings = ({ ratings }) => {
     });
     return <div className="text-yellow-500 flex gap-1 text-2xl">{ratingStar}</div>;
 };
-
+Ratings.propTypes = {
+    ratings: PropTypes.string.isRequired,
+};
 export default Ratings;

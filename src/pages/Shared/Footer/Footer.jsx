@@ -28,9 +28,6 @@ const Footer = () => {
 
     return (
         <div className="bg-transparent pt-12  dark:bg-[#0d1321] dark:text-white">
-            {/* <footer className="footer footer-center p-10 font-semibold bg-[#2b2d42] pt-12 dark:bg-[#0d1321] dark:text-white">
-              
-            </footer> */}
             <footer className="footer p-10  text-base-content max-w-7xl mx-auto">
                 <aside>
                     <img src={logo} className="w-20 h-20" alt="" />

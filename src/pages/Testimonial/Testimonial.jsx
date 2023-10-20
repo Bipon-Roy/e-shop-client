@@ -28,7 +28,7 @@ const Testimonial = () => {
                                 transformed my work experience. Thank you!
                             </p>
                             <div className="card-actions">
-                                <Ratings ratings={4}></Ratings>
+                                <Ratings ratings={"4"}></Ratings>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ const Testimonial = () => {
                                 are unmatched. I highly recommend it to everyone.
                             </p>
                             <div className="card-actions">
-                                <Ratings ratings={5}></Ratings>
+                                <Ratings ratings={"5"}></Ratings>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@ const Testimonial = () => {
                                 exceeded my expectations. I&apos;m a satisfied customer.
                             </p>
                             <div className="card-actions">
-                                <Ratings ratings={5}></Ratings>
+                                <Ratings ratings={"5"}></Ratings>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@ const Testimonial = () => {
                                 make shopping a breeze. I&apos;m thrilled with my purchase!
                             </p>
                             <div className="card-actions">
-                                <Ratings ratings={4}></Ratings>
+                                <Ratings ratings={"4"}></Ratings>
                             </div>
                         </div>
                     </div>
@@ -125,7 +125,7 @@ const Testimonial = () => {
                                 great experience.
                             </p>
                             <div className="card-actions">
-                                <Ratings ratings={4}></Ratings>
+                                <Ratings ratings={"4"}></Ratings>
                             </div>
                         </div>
                     </div>
@@ -149,7 +149,7 @@ const Testimonial = () => {
                                 great experience.
                             </p>
                             <div className="card-actions">
-                                <Ratings ratings={4}></Ratings>
+                                <Ratings ratings={"4"}></Ratings>
                             </div>
                         </div>
                     </div>
