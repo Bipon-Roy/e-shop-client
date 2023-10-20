@@ -18,12 +18,9 @@ const CartsCard = ({ cards, renderCart, setRenderCart }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(
-                    `https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/cart/${id}`,
-                    {
-                        method: "DELETE",
-                    }
-                )
+                fetch(`https://brand-shop-server-sepia.vercel.app/cart/${id}`, {
+                    method: "DELETE",
+                })
                     .then((res) => res.json())
                     .then((data) => {
                         if (data.deletedCount > 0) {

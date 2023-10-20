@@ -6,7 +6,10 @@ const Products = () => {
     const products = useLoaderData();
 
     const { brandName } = useParams();
-    const newProducts = products.filter((product) => product.brandName === brandName);
+    const newProducts = products.filter(
+        (product) => product.brandName.toLowerCase() === brandName.toLowerCase()
+    );
+    console.log(newProducts);
     const isTrue = newProducts.length === 0;
     return (
         <div className="dark:bg-[#0d1321]">

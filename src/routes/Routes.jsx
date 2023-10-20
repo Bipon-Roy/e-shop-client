@@ -42,7 +42,7 @@ const routes = createBrowserRouter([
             {
                 path: "/products/:brandName",
                 element: <Products />,
-                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/brands"),
+                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/products"),
             },
             {
                 path: "/addProducts",
@@ -59,10 +59,7 @@ const routes = createBrowserRouter([
                         <Cart />
                     </PrivateRoutes>
                 ),
-                loader: () =>
-                    fetch(
-                        "https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/cart"
-                    ),
+                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/cart"),
             },
             {
                 path: "/productDetails/:id",
@@ -71,7 +68,7 @@ const routes = createBrowserRouter([
                         <ProductDetails />
                     </PrivateRoutes>
                 ),
-                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/brands"),
+                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/products"),
             },
             {
                 path: "/updateProduct/:id",
@@ -81,7 +78,7 @@ const routes = createBrowserRouter([
                     </PrivateRoutes>
                 ),
                 loader: ({ params }) =>
-                    fetch(`https://brand-shop-server-sepia.vercel.app/brands/${params.id}`),
+                    fetch(`https://brand-shop-server-sepia.vercel.app/products/${params.id}`),
             },
         ],
     },
