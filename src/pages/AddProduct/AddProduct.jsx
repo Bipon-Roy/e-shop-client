@@ -16,7 +16,7 @@ const AddProduct = () => {
 
         console.log(newProduct);
 
-        fetch("https://brand-shop-server-sepia.vercel.app/products", {
+        fetch("https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/products", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

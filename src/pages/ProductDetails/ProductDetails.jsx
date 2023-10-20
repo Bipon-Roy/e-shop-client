@@ -26,7 +26,7 @@ const ProductDetails = () => {
             ratings,
             photo,
         };
-        fetch("https://brand-shop-server-sepia.vercel.app/cart", {
+        fetch("https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/cart", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

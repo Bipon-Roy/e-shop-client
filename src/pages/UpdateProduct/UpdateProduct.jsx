@@ -41,13 +41,16 @@ const UpdateProduct = () => {
 
         console.log(updateProduct);
 
-        fetch(`https://brand-shop-server-sepia.vercel.app/products/${_id}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(updateProduct),
-        })
+        fetch(
+            `https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/products/${_id}`,
+            {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json",
+                },
+                body: JSON.stringify(updateProduct),
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);

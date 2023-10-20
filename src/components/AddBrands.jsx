@@ -7,7 +7,7 @@ const AddBrands = () => {
         const photoUrl = form.photoUrl.value;
         const newBrands = { brandName, photoUrl };
 
-        fetch("https://brand-shop-server-sepia.vercel.app/brands", {
+        fetch("https://brand-shop-server-qd8z0rquu-bipon-roys-projects.vercel.app/brands", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
