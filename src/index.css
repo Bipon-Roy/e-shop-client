@@ -6,5 +6,9 @@
 
 body {
     font-family: "Manrope", sans-serif;
-    background-color: #fffcf2;
+    background-color: #fffcf2 !important;
+    color: #001219;
+}
+.dark {
+    background: #0d1321;
 }

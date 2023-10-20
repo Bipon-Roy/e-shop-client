@@ -11,6 +11,7 @@ import Products from "../pages/Products/Products";
 import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 import Cart from "../pages/Cart/Cart";
+import About from "../pages/About/About";
 
 const routes = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const routes = createBrowserRouter([
             {
                 path: "/brands",
                 element: <AddBrands />,
+            },
+            {
+                path: "/about",
+                element: <About />,
             },
             {
                 path: "/products/:brandName",

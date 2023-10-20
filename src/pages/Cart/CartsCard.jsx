@@ -36,8 +36,8 @@ const CartsCard = ({ cards, renderCart, setRenderCart }) => {
         });
     };
     return (
-        <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl p-4 lg:gap-5 mx-6 lg:mx-0">
+        <div className="dark:bg-[#0d1321]">
+            <div className="card lg:card-side bg-white shadow-xl p-4 lg:gap-5 mx-6 lg:mx-0">
                 <figure className="px-6">
                     <img src={photo} className="w-[320px] h-[260px]" alt={name} />
                 </figure>

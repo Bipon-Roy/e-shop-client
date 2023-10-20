@@ -38,39 +38,41 @@ const ProductDetails = () => {
             });
     };
     return (
-        <div className="max-w-7xl mx-auto">
-            <div className="flex mx-6 lg:mx-0 mt-12 gap-10">
-                <div className="rounded-xl">
-                    <img src={photo} alt={name} />
-                </div>
-                <div className="space-y-3  w-fit font-medium text-black ">
-                    <div className="flex justify-between">
-                        <p className="text-3xl text-[#bf0603] font-semibold">{name}</p>
-                        <button
-                            onClick={() => navigate(-1)}
-                            className=" text-lg bg-[#bf0603] text-white p-2 rounded-full"
-                        >
-                            <BiArrowBack />
-                        </button>
+        <div className="dark:bg-[#0d1321]">
+            <div className="max-w-7xl mx-auto ">
+                <div className="flex mx-6 lg:mx-0 pt-12 gap-10">
+                    <div className="rounded-xl">
+                        <img src={photo} alt={name} />
                     </div>
-
-                    <p className="font-medium">{shortDesc}</p>
-                    <p className="font-medium">Brand: {brandName}</p>
-                    <p className="text-[#bf0603] font-bold rounded-lg ">Price: {price}</p>
-                    <Ratings ratings={ratings}></Ratings>
-                    <p>
-                        <span className="font-semibold">Warranty Policy:</span> 1-year
-                        manufacturer&apos;s warranty
-                    </p>
-                    <div className="pt-10">
-                        <Link>
+                    <div className="space-y-3  w-fit font-medium text-black dark:text-white">
+                        <div className="flex justify-between">
+                            <p className="text-3xl text-[#bf0603] font-semibold">{name}</p>
                             <button
-                                onClick={handleAddToCart}
-                                className="py-2 w-1/2 bg-[#bf0603] font-medium text-white rounded"
+                                onClick={() => navigate(-1)}
+                                className=" text-lg bg-[#bf0603] text-white p-2 rounded-full"
                             >
-                                Add to Cart
+                                <BiArrowBack />
                             </button>
-                        </Link>
+                        </div>
+
+                        <p className="font-medium">{shortDesc}</p>
+                        <p className="font-medium">Brand: {brandName}</p>
+                        <p className="text-[#bf0603] font-bold rounded-lg ">Price: {price}</p>
+                        <Ratings ratings={ratings}></Ratings>
+                        <p>
+                            <span className="font-semibold">Warranty Policy:</span> 1-year
+                            manufacturer&apos;s warranty
+                        </p>
+                        <div className="pt-10">
+                            <Link>
+                                <button
+                                    onClick={handleAddToCart}
+                                    className="py-2 w-1/2 bg-[#bf0603] font-medium text-white rounded"
+                                >
+                                    Add to Cart
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>

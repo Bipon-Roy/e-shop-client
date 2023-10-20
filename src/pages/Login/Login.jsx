@@ -8,7 +8,7 @@ import swal from "sweetalert";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const { logIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+    const { logIn, signInWithGoogle, signInWithFacebook } = useContext(AuthContext);
     const route = useNavigate();
     const location = useLocation();
     const handleLogin = (e) => {
@@ -96,7 +96,7 @@ const Login = () => {
                         <FcGoogle className=" text-3xl" />
                     </button>
                     <button
-                        onClick={() => handleSocialSignIn(signInWithGithub)}
+                        onClick={() => handleSocialSignIn(signInWithFacebook)}
                         className="font-semibold flex gap-4 px-4 py-2 border-2 bg-white rounded-3xl items-center "
                     >
                         Continue With Facebook

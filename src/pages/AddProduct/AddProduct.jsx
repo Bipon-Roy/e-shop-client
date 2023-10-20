@@ -37,127 +37,129 @@ const AddProduct = () => {
             });
     };
     return (
-        <div className="max-w-7xl mx-auto">
-            <div className="px-24 py-12 bg-[#ccc5b9] text-[#22223b]">
-                <h2 className="text-3xl font-extrabold mb-4 text-center">Add Products</h2>
-                <form onSubmit={handleAddProduct}>
-                    {/* form name and quantity row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-[#22223b] font-semibold">
-                                    Product Name
-                                </span>
-                            </label>
+        <div className="dark:bg-[#0d1321]">
+            <div className="max-w-7xl mx-auto">
+                <div className="px-24 py-12 bg-[#ccc5b9] dark:bg-white text-[#22223b]">
+                    <h2 className="text-3xl font-extrabold mb-4 text-center">Add Products</h2>
+                    <form onSubmit={handleAddProduct}>
+                        {/* form name and quantity row */}
+                        <div className="md:flex mb-8 ">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Product Name
+                                    </span>
+                                </label>
 
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Product Name"
-                                className="input  w-full"
-                            />
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Product Name"
+                                    className="input  w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
+                            <div className="form-control md:w-1/2 ml-4">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Brand Name
+                                    </span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="brandName"
+                                    placeholder="Brand Name"
+                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
-                            <label className="label">
-                                <span className="label-text text-[#22223b] font-semibold">
-                                    Brand Name
-                                </span>
-                            </label>
-                            <input
-                                type="text"
-                                name="brandName"
-                                placeholder="Brand Name"
-                                className="input input-bordered w-full"
-                            />
-                        </div>
-                    </div>
-                    {/* form supplier row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-[#22223b] font-semibold">
-                                    Product Type
-                                </span>
-                            </label>
-                            <select
-                                name="type"
-                                className=" w-full input"
-                                placeholder="Choose Product Type"
-                            >
-                                <option value="">Choose Product Category</option>
-                                <option value="Phone">Phone</option>
-                                <option value="Watch">Watch</option>
-                                <option value="Laptop">Laptop</option>
-                                <option value="Headphones">Headphones</option>
-                            </select>
-                        </div>
-                        <div className="form-control md:w-1/2 ml-4">
-                            <label className="label">
-                                <span className="label-text text-[#22223b] font-semibold">
-                                    Price
-                                </span>
-                            </label>
+                        {/* form supplier row */}
+                        <div className="md:flex mb-8">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Product Type
+                                    </span>
+                                </label>
+                                <select
+                                    name="type"
+                                    className=" w-full input dark:text-white bg-white dark:bg-[#0d1321]"
+                                    placeholder="Choose Product Type"
+                                >
+                                    <option value="">Choose Product Category</option>
+                                    <option value="Phone">Phone</option>
+                                    <option value="Watch">Watch</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Headphones">Headphones</option>
+                                </select>
+                            </div>
+                            <div className="form-control md:w-1/2 ml-4">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Price
+                                    </span>
+                                </label>
 
-                            <input
-                                type="text"
-                                name="price"
-                                placeholder="Price"
-                                className="input input-bordered w-full "
-                            />
+                                <input
+                                    type="text"
+                                    name="price"
+                                    placeholder="Price"
+                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
                         </div>
-                    </div>
-                    {/* form category and details row */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text text-[#22223b] font-semibold">
-                                    Short Description
-                                </span>
-                            </label>
+                        {/* form category and details row */}
+                        <div className="md:flex mb-8">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Short Description
+                                    </span>
+                                </label>
 
-                            <input
-                                type="text"
-                                name="shortDesc"
-                                placeholder="Short Description"
-                                className="input input-bordered w-full"
-                            />
+                                <input
+                                    type="text"
+                                    name="shortDesc"
+                                    placeholder="Short Description"
+                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
+                            <div className="form-control md:w-1/2 ml-4">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Ratings
+                                    </span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="ratings"
+                                    placeholder="Ratings"
+                                    className="input input-bordered w-full bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
                         </div>
-                        <div className="form-control md:w-1/2 ml-4">
-                            <label className="label">
-                                <span className="label-text text-[#22223b] font-semibold">
-                                    Ratings
-                                </span>
-                            </label>
-                            <input
-                                type="text"
-                                name="ratings"
-                                placeholder="Ratings"
-                                className="input input-bordered w-full"
-                            />
+                        {/* form Photo url row */}
+                        <div className="mb-8">
+                            <div className="form-control w-full">
+                                <label className="label">
+                                    <span className="label-text text-[#22223b] font-semibold">
+                                        Photo URL
+                                    </span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="photo"
+                                    placeholder="Photo URL"
+                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                />
+                            </div>
                         </div>
-                    </div>
-                    {/* form Photo url row */}
-                    <div className="mb-8">
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text text-[#22223b] font-semibold">
-                                    Photo URL
-                                </span>
-                            </label>
-                            <input
-                                type="text"
-                                name="photo"
-                                placeholder="Photo URL"
-                                className="input input-bordered w-full"
-                            />
-                        </div>
-                    </div>
-                    <input
-                        type="submit"
-                        value="Add Product"
-                        className="bg-[#403d39] w-full py-2 font-bold text-white"
-                    />
-                </form>
+                        <input
+                            type="submit"
+                            value="Add Product"
+                            className="bg-[#403d39] dark:bg-[#0d47a1] w-full py-2 font-bold text-white"
+                        />
+                    </form>
+                </div>
             </div>
         </div>
     );

@@ -1,11 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import logo from "../../../assets/logo.png";
+import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-
+    const [theme, setTheme] = useState("light");
     const handleLogout = () => {
         logOut()
             .then((result) => {
@@ -16,6 +17,17 @@ const Navbar = () => {
             });
     };
 
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme]);
+
+    const handleDarkMood = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
     const links = (
         <>
             <li className="mr-5 font-semibold">
@@ -39,8 +51,8 @@ const Navbar = () => {
     );
 
     return (
-        <div className="">
-            <nav className="navbar max-w-7xl mx-auto pr-6 lg:px-0 lg:py-2">
+        <div className="dark:bg-[#0d1321] dark:text-white">
+            <nav className="navbar max-w-7xl mx-auto pr-6 lg:px-0 lg:py-2 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -75,6 +87,11 @@ const Navbar = () => {
                     <ul className=" menu-horizontal px-1">{links}</ul>
                 </div>
                 <div className="navbar-end">
+                    <div>
+                        <button onClick={handleDarkMood}>
+                            <MdDarkMode className="text-3xl mr-4" />
+                        </button>
+                    </div>
                     <div className="w-12 mr-2  md:mr-5">
                         {user && (
                             <img
@@ -97,12 +114,14 @@ const Navbar = () => {
                             </button>
                         </div>
                     ) : (
-                        <Link
-                            to="/login"
-                            className="px-5 border-2 border-[#bf0603] py-1 rounded-md font-bold"
-                        >
-                            Login
-                        </Link>
+                        <div>
+                            <Link
+                                to="/login"
+                                className="px-5 border-2 border-[#bf0603] py-1 rounded-md font-bold"
+                            >
+                                Login
+                            </Link>
+                        </div>
                     )}
                 </div>
             </nav>

@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import {
+    FacebookAuthProvider,
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
     onAuthStateChanged,
@@ -19,7 +20,7 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const googleProvider = new GoogleAuthProvider();
-
+    const facebookProvider = new FacebookAuthProvider();
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
@@ -30,6 +31,10 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider);
     };
 
+    const signInWithFacebook = () => {
+        setLoading(true);
+        return signInWithPopup(auth, facebookProvider);
+    };
     const logIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
@@ -66,6 +71,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         handleUpdateProfile,
         loading,
+        signInWithFacebook,
     };
     return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;
 };

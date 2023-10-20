@@ -12,17 +12,17 @@ const Brands = () => {
             });
     }, []);
     return (
-        <div className="max-w-7xl mx-auto">
-            <div className="mt-4">
+        <div className="dark:bg-[#0d1321] dark:text-white">
+            <div className="pt-4 max-w-7xl mx-auto">
                 <h1 className="text-4xl font-bold text-center">
                     Available <span className="text-[#bf0603]">Brands</span>
                 </h1>
-                <div className="h-[5px] my-2 w-24 bg-[#bf0603] rounded flex justify-center mx-auto"></div>
-                <div className="grid grid-cols-3 gap-6 my-12">
+                <div className="h-[5px] py-2 w-24 bg-[#bf0603] rounded flex justify-center mx-auto"></div>
+                <div className="grid grid-cols-3 gap-6 py-12">
                     {brands.map((brand) => (
                         <div key={brand._id}>
                             <Link to={`/products/${brand.brandName}`}>
-                                <div className=" border border-gray-300 rounded-xl">
+                                <div className=" border border-gray-300 rounded-xl dark:bg-[#edf2f4]">
                                     <div className="flex justify-center">
                                         <img
                                             className=" w-[450px] h-[230px] "

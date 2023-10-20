@@ -30,7 +30,7 @@ const Footer = () => {
 
     return (
         <div>
-            <footer className="footer footer-center p-10 font-semibold bg-[#403d39] text-white mt-12">
+            <footer className="footer footer-center p-10 font-semibold bg-transparent pt-12 dark:bg-[#0d1321] dark:text-white">
                 <div className="grid grid-cols-3 md:grid-flow-col  gap-4 font-semibold text-base list-none">
                     {links}
                 </div>
