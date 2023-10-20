@@ -83,8 +83,12 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex gap-2 items-center py-1">
-                        <img src={logo} className="w-[60px] h-[60px]" alt="NavLogo" />
-                        <h1 className="text-2xl font-semibold">eShop</h1>
+                        <img
+                            src={logo}
+                            className="w-12 h-12 md:w-[60px] md:h-[60px]"
+                            alt="NavLogo"
+                        />
+                        <h1 className="text-xl md:text-2xl font-semibold">eShop</h1>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -94,13 +98,13 @@ const Navbar = () => {
                     <div>
                         <button onClick={handleDarkMood}>
                             {theme === "dark" ? (
-                                <MdOutlineLightMode className="text-3xl mr-4" />
+                                <MdOutlineLightMode className="text-2xl md:text-3xl mr-4" />
                             ) : (
-                                <MdDarkMode className="text-3xl mr-4" />
+                                <MdDarkMode className="text-2xl md:text-3xl mr-4" />
                             )}
                         </button>
                     </div>
-                    <div className="w-12 mr-2  md:mr-5">
+                    <div className="w-10 md:w-12 mr-2  md:mr-5">
                         {user && (
                             <img
                                 className="rounded-full"

@@ -42,7 +42,7 @@ const Login = () => {
     };
 
     return (
-        <div className="flex justify-center dark:bg-[#0d1321] ">
+        <div className="flex justify-center dark:bg-[#0d1321]">
             <div
                 className="my-6  px-8 py-10 w-[400px] md:w-[650px] bg-white rounded shadow shadow-black dark:shadow-white
             dark:shadow-md"

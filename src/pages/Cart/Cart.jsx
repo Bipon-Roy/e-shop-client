@@ -20,7 +20,7 @@ const Cart = () => {
                         </h1>
                     </div>
                 ) : (
-                    <div className="grid md:grid-cols-2 gap-5 pt-10">
+                    <div className="grid md:grid-cols-2 gap-5 pt-10 mx-6 lg:mx-0">
                         {renderCart.map((cards) => (
                             <CartsCard
                                 key={cards._id}

@@ -58,7 +58,7 @@ const AddProduct = () => {
                                     className="input  w-full dark:text-white bg-white dark:bg-[#0d1321]"
                                 />
                             </div>
-                            <div className="form-control md:w-1/2 ml-4">
+                            <div className="form-control md:w-1/2 md:ml-4">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Brand Name
@@ -92,7 +92,7 @@ const AddProduct = () => {
                                     <option value="Headphones">Headphones</option>
                                 </select>
                             </div>
-                            <div className="form-control md:w-1/2 ml-4">
+                            <div className="form-control md:w-1/2 md:ml-4">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Price
@@ -123,7 +123,7 @@ const AddProduct = () => {
                                     className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
                                 />
                             </div>
-                            <div className="form-control md:w-1/2 ml-4">
+                            <div className="form-control md:w-1/2 md:ml-4">
                                 <label className="label">
                                     <span className="label-text text-[#22223b] font-semibold">
                                         Ratings

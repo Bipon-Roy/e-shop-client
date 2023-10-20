@@ -8,7 +8,7 @@ const Testimonial = () => {
                     Client <span className="text-[#bf0603] ">Reviews</span>
                 </h1>
                 <div className="mt-2 w-20 pt-[5px] bg-[#bf0603]  rounded flex justify-center mx-auto"></div>
-                <div className="grid grid-cols-3 gap-y-8 pt-8">
+                <div className="grid grid-cols-1 mx-5 lg:mx-0 md:grid-cols-2 lg:grid-cols-3 gap-y-8 pt-8">
                     <div className=" shadow-xl bg-white w-96">
                         <figure className="">
                             <img
