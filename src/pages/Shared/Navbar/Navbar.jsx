@@ -83,19 +83,15 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex gap-2 items-center py-1">
-                        <img
-                            src={logo}
-                            className="w-12 h-12 md:w-[60px] md:h-[60px]"
-                            alt="NavLogo"
-                        />
-                        <h1 className="text-xl md:text-2xl font-semibold">eShop</h1>
+                        <img src={logo} className="w-8 h-8 md:w-[60px] md:h-[60px]" alt="NavLogo" />
+                        <h1 className="text-base md:text-2xl font-semibold">eShop</h1>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className=" menu-horizontal px-1">{links}</ul>
                 </div>
                 <div className="navbar-end">
-                    <div>
+                    <div className="flex items-center">
                         <button onClick={handleDarkMood}>
                             {theme === "dark" ? (
                                 <MdOutlineLightMode className="text-2xl md:text-3xl mr-4" />
@@ -104,7 +100,7 @@ const Navbar = () => {
                             )}
                         </button>
                     </div>
-                    <div className="w-10 md:w-12 mr-2  md:mr-5">
+                    <div className="w-8 md:w-10 mr-2  md:mr-5">
                         {user && (
                             <img
                                 className="rounded-full"
@@ -116,10 +112,10 @@ const Navbar = () => {
 
                     {user ? (
                         <div className="flex items-center gap-3">
-                            <p className="text-sm md:text-base font-bold">{user.displayName}</p>
+                            <p className="text-xs md:text-base font-bold">{user.displayName}</p>
 
                             <button
-                                className="md:px-3 md:py-2 rounded-md font-bold text-sm  md:text-base text-[#bf0603]"
+                                className="md:px-3 md:py-2 rounded-md font-bold text-xs  md:text-base text-[#bf0603]"
                                 onClick={handleLogout}
                             >
                                 Logout

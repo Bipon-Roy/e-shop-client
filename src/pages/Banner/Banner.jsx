@@ -1,3 +1,6 @@
+import Lottie from "lottie-react";
+import shoppingAnimation from "../../assets/lottie.json";
+
 const Banner = () => {
     return (
         <div className="dark:bg-[#0d1321]">
@@ -12,12 +15,8 @@ const Banner = () => {
                             powerful smartphones. Embrace the future of innovation.
                         </p>
                     </div>
-                    <div className="mt-5 md:mt-0">
-                        <img
-                            className="rounded-lg"
-                            src="https://i.ibb.co/6sbjFY3/Hero.jpg"
-                            alt="HeroImage"
-                        />
+                    <div className="mt-5 md:mt-0 md:w-3/4 lg:w-1/2 ">
+                        <Lottie animationData={shoppingAnimation} loop={true} />
                     </div>
                 </div>
             </div>

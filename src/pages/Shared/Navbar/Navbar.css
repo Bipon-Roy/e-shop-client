@@ -4,3 +4,10 @@ nav a.active {
     padding: 5px 16px;
     border-radius: 5px;
 }
+
+.dark nav a.active {
+    background-color: #c1121f;
+    color: white;
+    padding: 5px 16px;
+    border-radius: 5px;
+}

@@ -64,7 +64,7 @@ const UpdateProduct = () => {
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="max-w-7xl mx-auto">
-                <div className="px-6 md:px-24 py-12 bg-[#ccc5b9] dark:bg-white text-[#22223b] relative">
+                <div className="px-6 md:px-24 py-12 bg-[#c9d2ee] dark:bg-white text-[#22223b] relative">
                     <h2 className="text-3xl font-extrabold mb-4 text-center">Update Product</h2>
                     <form onSubmit={handleUpdateProduct}>
                         {/* form name and quantity row */}
@@ -224,7 +224,7 @@ const UpdateProduct = () => {
                         <input
                             type="submit"
                             value="Update Product"
-                            className="bg-[#403d39] dark:bg-[#023e7d] w-full py-2 font-bold text-white"
+                            className="bg-[#403d39] dark:bg-[#C1121F] w-full py-2 font-bold text-white"
                         />
                     </form>
                     <div className="absolute top-3 right-3 ">

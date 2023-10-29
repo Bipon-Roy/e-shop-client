@@ -18,25 +18,21 @@ const Brands = () => {
                     Available <span className="text-[#bf0603]">Brands</span>
                 </h1>
                 <div className="mt-2 pt-[6px] w-24 bg-[#bf0603] rounded flex justify-center mx-auto"></div>
-                <div className="mx-8 lg:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-12">
+                <div className="mx-8 lg:mx-0 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 py-12">
                     {brands.map((brand) => (
                         <div key={brand._id}>
-                            <Link to={`/products/${brand.brandName}`}>
-                                <div className=" border border-gray-300 rounded-xl dark:bg-[#edf2f4]">
-                                    <div className="flex justify-center">
-                                        <img
-                                            className=" w-[450px] h-[230px] "
-                                            src={brand.photoUrl}
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="m-2 flex justify-center">
-                                        <p className="bg-[#bf0603] px-6 py-1 rounded-md font-semibold text-white w-fit">
-                                            {brand.brandName}
-                                        </p>
-                                    </div>
+                            <div className="bg-white p-2 rounded-xl dark:bg-[#edf2f4] shadow-md">
+                                <div className="flex justify-center">
+                                    <img className="h-[120px]" src={brand.photoUrl} alt="" />
                                 </div>
-                            </Link>
+                                <div className="m-2 ">
+                                    <Link to={`/products/${brand.brandName}`}>
+                                        <button className="bg-[#ff8fa3] hover:bg-[#bf0603] px-3 py-1 rounded-md font-medium text-white text-sm w-full">
+                                            View Products
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
