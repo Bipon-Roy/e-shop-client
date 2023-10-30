@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../Provider/AuthProvider";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/Logo.png";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 
 const Navbar = () => {
@@ -59,7 +59,7 @@ const Navbar = () => {
             <nav className="navbar max-w-7xl mx-auto pr-6 lg:px-0 lg:py-2 ">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <label tabIndex={0} className="btn btn-ghost lg:hidden">
+                        <label tabIndex={0} className="btn btn-ghost p-1 lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -82,8 +82,12 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <div className="flex gap-2 items-center py-1">
-                        <img src={logo} className="w-8 h-8 md:w-[60px] md:h-[60px]" alt="NavLogo" />
+                    <div className="flex gap-1 items-center py-1">
+                        <img
+                            src={logo}
+                            className="w-10 h-8 md:w-[70px] md:h-[60px]"
+                            alt="NavLogo"
+                        />
                         <h1 className="text-base md:text-2xl font-semibold">eShop</h1>
                     </div>
                 </div>

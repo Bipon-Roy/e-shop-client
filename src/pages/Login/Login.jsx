@@ -6,6 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import swal from "sweetalert";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { logIn, signInWithGoogle, signInWithFacebook } = useContext(AuthContext);
@@ -29,9 +30,47 @@ const Login = () => {
                 swal("Eroor!", error.message, "error");
             });
     };
-    const handleSocialSignIn = (method) => {
+
+    const handleGoogleSignIn = (method) => {
         method()
             .then((result) => {
+                console.log(result.user);
+                route(location?.state ? location.state : "/");
+                swal("Welcome!", "Login Successful!", "success");
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
+    // const handleFacebookSignIn = (method) => {
+    //     method()
+    //         .then(async (result) => {
+    //             const credentials = await FacebookAuthProvider.credentialFromResult(result);
+    //             const token = credentials.accessToken;
+    //             console.log(token);
+    //             let photoUrl = result.user.photoURL + "?height=500&access_token=" + token;
+    //             console.log(photoUrl);
+    //             const name = result.user.displayName;
+    //             await handleUpdateProfile(name, photoUrl);
+    //             console.log(result.user);
+    //             route(location?.state ? location.state : "/");
+    //             swal("Welcome!", "Login Successful!", "success");
+    //         })
+    //         .catch((error) => {
+    //             console.error(error);
+    //         });
+    // };
+
+    const handleFacebookSignIn = (method) => {
+        method()
+            .then((result) => {
+                // const credentials = FacebookAuthProvider.credentialFromResult(result);
+                // const token = credentials.accessToken;
+                // console.log(token);
+                // let photoUrl = result.user.photoURL + "?height=500&access_token=" + token;
+                // console.log(photoUrl);
+                // const name = result.user.displayName;
+                // handleUpdateProfile(name, photoUrl);
                 console.log(result.user);
                 route(location?.state ? location.state : "/");
                 swal("Welcome!", "Login Successful!", "success");
@@ -92,14 +131,14 @@ const Login = () => {
                 <div className="divider font-bold my-4">Social Login</div>
                 <div className="flex flex-col gap-4 md:gap-0 md:flex-row justify-between">
                     <button
-                        onClick={() => handleSocialSignIn(signInWithGoogle)}
+                        onClick={() => handleGoogleSignIn(signInWithGoogle)}
                         className="font-semibold flex gap-4 px-4 py-2 bg-white rounded-3xl items-center relative border-2"
                     >
                         Continue With Google
                         <FcGoogle className=" text-3xl" />
                     </button>
                     <button
-                        onClick={() => handleSocialSignIn(signInWithFacebook)}
+                        onClick={() => handleFacebookSignIn(signInWithFacebook)}
                         className="font-semibold flex gap-4 px-4 py-2 border-2 bg-white rounded-3xl items-center "
                     >
                         Continue With Facebook
