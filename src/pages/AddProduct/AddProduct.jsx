@@ -54,6 +54,7 @@ const AddProduct = () => {
                                 <input
                                     type="text"
                                     name="name"
+                                    required
                                     placeholder="Product Name"
                                     className="input  w-full dark:text-white bg-white dark:bg-[#0d1321]"
                                 />
@@ -65,6 +66,7 @@ const AddProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     type="text"
                                     name="brandName"
                                     placeholder="Brand Name"
@@ -81,6 +83,7 @@ const AddProduct = () => {
                                     </span>
                                 </label>
                                 <select
+                                    required
                                     name="type"
                                     className=" w-full input dark:text-white bg-white dark:bg-[#0d1321]"
                                     placeholder="Choose Product Type"
@@ -100,6 +103,7 @@ const AddProduct = () => {
                                 </label>
 
                                 <input
+                                    required
                                     type="text"
                                     name="price"
                                     placeholder="Price"
@@ -117,6 +121,7 @@ const AddProduct = () => {
                                 </label>
 
                                 <input
+                                    required
                                     type="text"
                                     name="shortDesc"
                                     placeholder="Short Description"
@@ -130,6 +135,7 @@ const AddProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     type="text"
                                     name="ratings"
                                     placeholder="Ratings"
@@ -146,6 +152,7 @@ const AddProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     type="text"
                                     name="photo"
                                     placeholder="Photo URL"

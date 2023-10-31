@@ -77,6 +77,7 @@ const UpdateProduct = () => {
                                 </label>
 
                                 <input
+                                    required
                                     defaultValue={name}
                                     type="text"
                                     name="name"
@@ -91,6 +92,7 @@ const UpdateProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     defaultValue={brandName}
                                     type="text"
                                     name="brandName"
@@ -108,6 +110,7 @@ const UpdateProduct = () => {
                                     </span>
                                 </label>
                                 <select
+                                    required
                                     value={typeValue}
                                     onChange={handleTypeChange}
                                     name="type"
@@ -129,6 +132,7 @@ const UpdateProduct = () => {
                                 </label>
 
                                 <input
+                                    required
                                     defaultValue={price}
                                     type="text"
                                     name="price"
@@ -147,6 +151,7 @@ const UpdateProduct = () => {
                                 </label>
 
                                 <input
+                                    required
                                     defaultValue={shortDesc}
                                     type="text"
                                     name="shortDesc"
@@ -161,6 +166,7 @@ const UpdateProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     defaultValue={ratings}
                                     type="text"
                                     name="ratings"
@@ -178,6 +184,7 @@ const UpdateProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     defaultValue={photo}
                                     type="text"
                                     name="photo"
@@ -195,6 +202,7 @@ const UpdateProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     defaultValue={keyFeature}
                                     type="text"
                                     name="keyFeature"
@@ -212,6 +220,7 @@ const UpdateProduct = () => {
                                     </span>
                                 </label>
                                 <input
+                                    required
                                     defaultValue={desc}
                                     type="text"
                                     name="desc"

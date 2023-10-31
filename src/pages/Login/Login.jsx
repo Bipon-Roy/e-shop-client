@@ -42,24 +42,6 @@ const Login = () => {
                 console.error(error);
             });
     };
-    // const handleFacebookSignIn = (method) => {
-    //     method()
-    //         .then(async (result) => {
-    //             const credentials = await FacebookAuthProvider.credentialFromResult(result);
-    //             const token = credentials.accessToken;
-    //             console.log(token);
-    //             let photoUrl = result.user.photoURL + "?height=500&access_token=" + token;
-    //             console.log(photoUrl);
-    //             const name = result.user.displayName;
-    //             await handleUpdateProfile(name, photoUrl);
-    //             console.log(result.user);
-    //             route(location?.state ? location.state : "/");
-    //             swal("Welcome!", "Login Successful!", "success");
-    //         })
-    //         .catch((error) => {
-    //             console.error(error);
-    //         });
-    // };
 
     const handleFacebookSignIn = (method) => {
         method()
@@ -81,7 +63,7 @@ const Login = () => {
     };
 
     return (
-        <div className="mx-5 md:mx-0 flex justify-center dark:bg-[#0d1321]">
+        <div className="px-5 md:mx-0 flex justify-center dark:bg-[#0d1321]">
             <div
                 className="my-6  px-8 py-10 w-[400px] md:w-[650px] bg-white rounded shadow shadow-black dark:shadow-white
             dark:shadow-md"
