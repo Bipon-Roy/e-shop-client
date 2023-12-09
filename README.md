@@ -1,6 +1,6 @@
 # Brand Shop(eShop)
 
-The Brand Shop project is about selling electronic products like phone,laptop,headphones and smartwatches. It's built with React (including React Router) Tailwind, Node, MongoDb and Firebase Authentication.
+The Brand Shop project is about selling electronic products like phone,laptop,headphones and smartwatches.
 
 -   Live_Link: https://eshop-31def.web.app/
 
