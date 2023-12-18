@@ -26,7 +26,7 @@ const ProductDetails = () => {
             ratings,
             photo,
         };
-        fetch("http://localhost:5000/cart", {
+        fetch("https://brand-shop-server-sepia.vercel.app/cart", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
