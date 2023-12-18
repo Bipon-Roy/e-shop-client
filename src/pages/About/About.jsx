@@ -3,9 +3,9 @@ const About = () => {
         <div className="dark:bg-[#0d1321] text-white">
             <div className="max-w-7xl mx-auto pt-3">
                 <h1 className="text-center font-semibold text-4xl text-[#001219] dark:text-white">
-                    About <span className="text-[#bf0603] ">Us</span>
+                    About <span className="text-primary ">Us</span>
                 </h1>
-                <div className="mt-2 w-20 pt-[5px] bg-[#bf0603]  rounded flex justify-center mx-auto"></div>
+                <div className="mt-2 w-20 pt-[5px] bg-primary  rounded flex justify-center mx-auto"></div>
                 <div className="grid lg:grid-cols-2 gap-8 pt-8 pb-10 mx-5 lg:mx-0 ">
                     <div className="">
                         <img
@@ -16,8 +16,8 @@ const About = () => {
                     </div>
                     <div className="text-black space-y-3 dark:text-white">
                         <h1 className="text-3xl font-bold  text-center">
-                            <span className="text-[#bf0603] ">Welcome to eShop </span> - Your
-                            Trusted Source for Premium Electronics!
+                            <span className="text-primary ">Welcome to eShop </span> - Your Trusted
+                            Source for Premium Electronics!
                         </h1>
                         <p className="font-medium">
                             At eShop, we are passionate about technology and committed to providing
@@ -26,12 +26,12 @@ const About = () => {
                             go-to destination for tech enthusiasts, gadget lovers, and everyday
                             consumers.
                         </p>
-                        <p className="text-[#bf0603]  text-2xl font-bold text-center">
+                        <p className="text-primary  text-2xl font-bold text-center">
                             Why Choose Us?
                         </p>
                         <div className="space-y-4">
                             <p>
-                                <span className="text-[#403D39] dark:text-[#bf0603] font-extrabold mr-1">
+                                <span className="text-gray dark:text-primary font-extrabold mr-1">
                                     Wide Product Selection:
                                 </span>
                                 Discover a wide range of electronic products, from cutting-edge
@@ -39,14 +39,14 @@ const About = () => {
                                 roof.
                             </p>
                             <p>
-                                <span className="text-[#403D39] dark:text-[#bf0603] font-extrabold mr-1">
+                                <span className="text-gray dark:text-primary font-extrabold mr-1">
                                     Quality Assurance:
                                 </span>
                                 Our commitment to quality means you can trust in the products we
                                 offer. We source from reputable brands and manufacturers.
                             </p>
                             <p>
-                                <span className="text-[#403D39] dark:text-[#bf0603] font-extrabold mr-1">
+                                <span className="text-gray dark:text-primary font-extrabold mr-1">
                                     Competitive Pricing:
                                 </span>
                                 Enjoy competitive prices, frequent discounts, and special offers
@@ -54,14 +54,14 @@ const About = () => {
                                 the bank.
                             </p>
                             <p>
-                                <span className="text-[#403D39] dark:text-[#bf0603] font-extrabold mr-1">
+                                <span className="text-gray dark:text-primary font-extrabold mr-1">
                                     Expert Customer Support:
                                 </span>
                                 Our knowledgeable and friendly customer support team is here to
                                 assist you every step of the way.
                             </p>
                             <p>
-                                <span className="text-[#403D39] dark:text-[#bf0603] font-extrabold mr-1">
+                                <span className="text-gray dark:text-primary font-extrabold mr-1">
                                     Fast and Secure Shipping:
                                 </span>
                                 Experience swift and secure delivery to your doorstep, ensuring you

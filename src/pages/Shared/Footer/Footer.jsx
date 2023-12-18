@@ -27,28 +27,28 @@ const Footer = () => {
     );
 
     return (
-        <div className="bg-transparent pt-12  dark:bg-[#0d1321] dark:text-white">
-            <footer className="footer p-10  text-base-content max-w-7xl mx-auto">
+        <div className="bg-transparent pt-12  dark:bg-[#0d1321] dark:text-white ">
+            <footer className="footer p-10  text-base-content md:place-items-center max-w-7xl mx-auto">
                 <aside>
                     <img src={logo} className="w-20 h-20" alt="" />
-                    <p className="text-[#403D39] dark:text-white font-semibold">
+                    <p className="text-gray dark:text-white font-semibold">
                         eShop Industries Ltd.
                         <br />
                         Providing reliable tech since 1992
                     </p>
                 </aside>
-                <nav className="text-[#403D39] dark:text-white font-semibold">
+                <nav className="text-gray dark:text-white font-semibold">
                     <header className="footer-title opacity-100">Services</header>
                     <a className="link link-hover">Branding</a>
                     <a className="link link-hover">Design</a>
                     <a className="link link-hover">Marketing</a>
                     <a className="link link-hover">Advertisement</a>
                 </nav>
-                <div className="text-[#403D39] dark:text-white font-semibold list-none">
+                <div className="text-gray dark:text-white font-semibold list-none">
                     <header className="footer-title opacity-100">Company</header>
                     {links}
                 </div>
-                <nav className="text-[#403D39] dark:text-white font-semibold">
+                <nav className="text-gray dark:text-white font-semibold">
                     <header className="footer-title opacity-100">Legal</header>
                     <a className="link link-hover">Terms of use</a>
                     <a className="link link-hover">Privacy policy</a>

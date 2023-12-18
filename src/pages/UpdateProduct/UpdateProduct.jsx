@@ -41,7 +41,7 @@ const UpdateProduct = () => {
 
         console.log(updateProduct);
 
-        fetch(`https://brand-shop-server-sepia.vercel.app/products/${_id}`, {
+        fetch(`http://localhost:5000/products/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

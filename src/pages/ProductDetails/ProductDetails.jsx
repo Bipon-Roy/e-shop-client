@@ -26,7 +26,7 @@ const ProductDetails = () => {
             ratings,
             photo,
         };
-        fetch("https://brand-shop-server-sepia.vercel.app/cart", {
+        fetch("http://localhost:5000/cart", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -55,10 +55,10 @@ const ProductDetails = () => {
                     </div>
                     <div className="space-y-3  w-fit font-medium text-black dark:text-white">
                         <div className="flex justify-between">
-                            <p className="text-3xl text-[#bf0603] font-semibold">{name}</p>
+                            <p className="text-3xl text-primary font-semibold">{name}</p>
                             <button
                                 onClick={() => navigate(-1)}
-                                className=" text-lg bg-[#bf0603] text-white p-2 rounded-full"
+                                className=" text-lg bg-primary text-white p-2 rounded-full"
                             >
                                 <BiArrowBack />
                             </button>
@@ -66,7 +66,7 @@ const ProductDetails = () => {
 
                         <p className="font-medium">{shortDesc}</p>
                         <p className="font-medium">Brand: {brandName}</p>
-                        <p className="text-[#bf0603] font-bold rounded-lg ">Price: {price}</p>
+                        <p className="text-primary font-bold rounded-lg ">Price: {price}</p>
                         <Ratings ratings={ratings}></Ratings>
                         <p>
                             <span className="font-bold">Description:</span> {desc}
@@ -82,7 +82,7 @@ const ProductDetails = () => {
                             <Link>
                                 <button
                                     onClick={handleAddToCart}
-                                    className="py-2 w-full bg-[#bf0603] font-medium text-white rounded"
+                                    className="py-2 w-full bg-primary font-medium text-white rounded"
                                 >
                                     Add to Cart
                                 </button>
