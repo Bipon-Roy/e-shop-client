@@ -28,13 +28,13 @@ const ProductCard = ({ cards }) => {
                                     Details
                                 </button>
                             </Link>
-                            {/* <Link to={`/updateProduct/${_id}`}>
+                            <Link to={`/updateProduct/${_id}`}>
                                 <button className="bg-[#eb5e28] px-4 py-1 rounded text-white font-medium">
                                     <span className="flex items-center gap-1">
                                         Update <RxUpdate />
                                     </span>
                                 </button>
-                            </Link> */}
+                            </Link>
                             <Link to={`/productDetails/${_id}`}>
                                 <button className="bg-green-500 px-5 py-1 rounded text-white font-medium ">
                                     Buy Now
