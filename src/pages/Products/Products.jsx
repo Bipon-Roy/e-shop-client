@@ -4,13 +4,11 @@ import ProductCard from "./ProductCard";
 
 const Products = () => {
     const products = useLoaderData();
-
     const { brandName } = useParams();
     const newProducts = products.filter(
         (product) => product.brandName.toLowerCase() === brandName.toLowerCase()
     );
-    console.log(newProducts);
-    const isTrue = newProducts.length === 0;
+    const isTrue = products.length === 0;
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="max-w-7xl mx-auto">

@@ -1,15 +1,20 @@
-import { useContext, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import CartsCard from "./CartsCard";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const Cart = () => {
-    const cartList = useLoaderData();
+    const axiosSecure = useAxiosSecure();
+    const [cartList, setCartList] = useState([]);
     const { user } = useContext(AuthContext);
+    useEffect(() => {
+        axiosSecure.get(`cart?email=${user?.email}`).then((res) => {
+            setCartList(res.data);
+        });
+    }, [axiosSecure, user.email]);
 
-    const newCartList = cartList.filter((product) => product.userEmail === user.email);
-    const isTrue = newCartList.length === 0;
-    const [renderCart, setRenderCart] = useState(newCartList);
+    const isTrue = cartList.length === 0;
+
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="mx-auto max-w-7xl">
@@ -21,12 +26,12 @@ const Cart = () => {
                     </div>
                 ) : (
                     <div className="grid md:grid-cols-2 gap-5 pt-10 mx-6 lg:mx-0">
-                        {renderCart.map((cards) => (
+                        {cartList.map((cards) => (
                             <CartsCard
                                 key={cards._id}
                                 cards={cards}
-                                renderCart={renderCart}
-                                setRenderCart={setRenderCart}
+                                renderCart={cartList}
+                                setRenderCart={setCartList}
                             ></CartsCard>
                         ))}
                     </div>

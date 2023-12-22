@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useAxiosUrl from "../../Hook/useAxiosUrl";
 
 const Brands = () => {
     const [brands, setBrands] = useState([]);
-
+    const axiosUrl = useAxiosUrl();
     useEffect(() => {
-        fetch("http://localhost:5000/brands")
-            .then((res) => res.json())
-            .then((data) => {
-                setBrands(data);
-            });
-    }, []);
+        axiosUrl.get("/brands").then((res) => {
+            setBrands(res.data);
+        });
+    }, [axiosUrl]);
     return (
         <div className="dark:bg-[#0d1321] dark:text-white">
             <div className="pt-4 max-w-7xl mx-auto">

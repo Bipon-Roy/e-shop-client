@@ -1,14 +1,16 @@
-import { Link, useLoaderData, useNavigate, useParams } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Ratings from "../Products/Ratings";
 import { BiArrowBack } from "react-icons/bi";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 const ProductDetails = () => {
     const { user } = useContext(AuthContext);
-    const products = useLoaderData();
-    const { id } = useParams();
-    const product = products.find((card) => card._id === id);
+
+    const axiosSecure = useAxiosSecure();
+
+    const product = useLoaderData();
     const { name, brandName, type, price, shortDesc, ratings, photo, desc, keyFeature } = product;
     const navigate = useNavigate();
 
@@ -26,25 +28,17 @@ const ProductDetails = () => {
             ratings,
             photo,
         };
-        fetch("http://localhost:5000/cart", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(cartItem),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: "Success!",
-                        text: "Product Successfully Added!",
-                        icon: "success",
-                        confirmButtonText: "Done!",
-                    });
-                }
-            });
+        axiosSecure.post("/cart", cartItem).then((res) => {
+            if (res.data.insertedId) {
+                console.log("user added to the database");
+                Swal.fire({
+                    title: "Success!",
+                    text: "Product Successfully Added!",
+                    icon: "success",
+                    confirmButtonText: "Done!",
+                });
+            }
+        });
     };
     return (
         <div className="dark:bg-[#0d1321]">

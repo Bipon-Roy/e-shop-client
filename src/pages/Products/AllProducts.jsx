@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import useAxiosUrl from "../../Hook/useAxiosUrl";
 
 const AllProducts = () => {
     const [products, setProducts] = useState([]);
+    const axiosUrl = useAxiosUrl();
     useEffect(() => {
-        fetch("http://localhost:5000/products")
-            .then((res) => res.json())
-            .then((data) => {
-                setProducts(data);
-            });
-    }, []);
+        axiosUrl.get("/products").then((res) => {
+            setProducts(res.data);
+        });
+    }, [axiosUrl]);
 
     return (
         <div className=" dark:bg-[#0d1321]">

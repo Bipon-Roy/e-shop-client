@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import { AiFillDelete } from "react-icons/ai";
 import Ratings from "../Products/Ratings";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const CartsCard = ({ cards, renderCart, setRenderCart }) => {
-    console.log(typeof setRenderCart);
+    const axiosSecure = useAxiosSecure();
     const { _id, photo, name, brandName, type, price, ratings, shortDesc } = cards;
 
     const handleDeleteProduct = (id) => {
@@ -18,21 +19,13 @@ const CartsCard = ({ cards, renderCart, setRenderCart }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/cart/${id}`, {
-                    credentials: "include",
-                    method: "DELETE",
-                })
-                    .then((res) => res.json())
-                    .then((data) => {
-                        if (data.deletedCount > 0) {
-                            console.log("deleted successfully");
-                            Swal.fire("Deleted!", "Cart Item has been deleted.", "success");
-                            // remove the user from the UI
-                            const remainingCards = renderCart.filter((user) => user._id !== id);
-                            console.log(remainingCards);
-                            setRenderCart(remainingCards);
-                        }
-                    });
+                axiosSecure.delete(`/cart/${id}`).then((data) => {
+                    if (data.status === 200) {
+                        const remainingCards = renderCart.filter((card) => card._id !== id);
+                        setRenderCart(remainingCards);
+                        Swal.fire("Deleted!", "Cart Item has been deleted.", "success");
+                    }
+                });
             }
         });
     };

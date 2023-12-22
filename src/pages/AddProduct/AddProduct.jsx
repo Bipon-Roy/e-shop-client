@@ -1,6 +1,8 @@
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const AddProduct = () => {
+    const axiosSecure = useAxiosSecure();
     const handleAddProduct = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -14,29 +16,18 @@ const AddProduct = () => {
 
         const newProduct = { name, brandName, type, price, shortDesc, ratings, photo };
 
-        console.log(newProduct);
-
-        fetch("http://localhost:5000/products", {
-            method: "POST",
-            credentials: "include",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(newProduct),
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                if (data.insertedId) {
-                    Swal.fire({
-                        title: "Success!",
-                        text: "Product Added Successfully",
-                        icon: "success",
-                        confirmButtonText: "Done!",
-                    });
-                }
-            });
+        axiosSecure.post("/products", newProduct).then((res) => {
+            if (res.data.insertedId) {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Product Added Successfully",
+                    icon: "success",
+                    confirmButtonText: "Done!",
+                });
+            }
+        });
     };
+
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="max-w-7xl mx-auto">

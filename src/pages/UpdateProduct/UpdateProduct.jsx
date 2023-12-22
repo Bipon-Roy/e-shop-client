@@ -41,7 +41,6 @@ const UpdateProduct = () => {
         };
 
         axiosSecure.put(`/products/${_id}`, updateProduct).then((data) => {
-            console.log(data);
             if (data.status === 200) {
                 Swal.fire({
                     title: "Success!",
