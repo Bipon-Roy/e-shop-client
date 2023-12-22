@@ -42,7 +42,7 @@ const routes = createBrowserRouter([
             {
                 path: "/products/:brandName",
                 element: <Products />,
-                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/products"),
+                loader: () => fetch("http://localhost:5000/products"),
             },
             {
                 path: "/addProducts",
@@ -59,7 +59,7 @@ const routes = createBrowserRouter([
                         <Cart />
                     </PrivateRoutes>
                 ),
-                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/cart"),
+                loader: () => fetch("http://localhost:5000/cart"),
             },
             {
                 path: "/productDetails/:id",
@@ -68,7 +68,7 @@ const routes = createBrowserRouter([
                         <ProductDetails />
                     </PrivateRoutes>
                 ),
-                loader: () => fetch("https://brand-shop-server-sepia.vercel.app/products"),
+                loader: () => fetch("http://localhost:5000/products"),
             },
             {
                 path: "/updateProduct/:id",
@@ -77,8 +77,7 @@ const routes = createBrowserRouter([
                         <UpdateProduct />
                     </PrivateRoutes>
                 ),
-                loader: ({ params }) =>
-                    fetch(`https://brand-shop-server-sepia.vercel.app/products/${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
             },
         ],
     },

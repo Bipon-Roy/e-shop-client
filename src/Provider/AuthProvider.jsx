@@ -12,13 +12,14 @@ import {
 
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase_config";
+import useAxiosUrl from "../Hook/useAxiosUrl";
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+    const axiosUrl = useAxiosUrl();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
     const createUser = (email, password) => {
@@ -53,15 +54,27 @@ const AuthProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log("Changed User", currentUser);
+        const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
             setUser(currentUser);
-            setLoading(false);
+            if (currentUser) {
+                // get token and store client
+                const userInfo = { email: currentUser.email };
+                axiosUrl.post("/jwt", userInfo).then((res) => {
+                    if (res.data.token) {
+                        localStorage.setItem("access-token", res.data.token);
+                        setLoading(false);
+                    }
+                });
+            } else {
+                // TODO: remove token (if token stored in the client side: Local storage, caching, in memory)
+                localStorage.removeItem("access-token");
+                setLoading(false);
+            }
         });
         return () => {
-            unSubscribe();
+            return unsubscribe();
         };
-    }, []);
+    }, [axiosUrl]);
 
     const authInfo = {
         createUser,

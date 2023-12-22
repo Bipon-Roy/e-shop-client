@@ -16,8 +16,9 @@ const AddProduct = () => {
 
         console.log(newProduct);
 
-        fetch("https://brand-shop-server-sepia.vercel.app/products", {
+        fetch("http://localhost:5000/products", {
             method: "POST",
+            credentials: "include",
             headers: {
                 "content-type": "application/json",
             },
@@ -39,7 +40,7 @@ const AddProduct = () => {
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="max-w-7xl mx-auto">
-                <div className="px-6 md:px-24 py-12 bg-[#c9d2ee] dark:bg-white text-[#22223b]">
+                <div className="px-6 md:px-24 py-12 bg-white text-[#22223b] shadow-lg">
                     <h2 className="text-3xl font-extrabold mb-4 text-center">Add Products</h2>
                     <form onSubmit={handleAddProduct}>
                         {/* form name and quantity row */}
@@ -56,7 +57,7 @@ const AddProduct = () => {
                                     name="name"
                                     required
                                     placeholder="Product Name"
-                                    className="input  w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                    className="input input-bordered w-full  bg-white"
                                 />
                             </div>
                             <div className="form-control md:w-1/2 md:ml-4">
@@ -70,7 +71,7 @@ const AddProduct = () => {
                                     type="text"
                                     name="brandName"
                                     placeholder="Brand Name"
-                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                    className="input input-bordered w-full  bg-white"
                                 />
                             </div>
                         </div>
@@ -85,7 +86,7 @@ const AddProduct = () => {
                                 <select
                                     required
                                     name="type"
-                                    className=" w-full input dark:text-white bg-white dark:bg-[#0d1321]"
+                                    className="input input-bordered w-full  bg-white"
                                     placeholder="Choose Product Type"
                                 >
                                     <option value="">Choose Product Category</option>
@@ -107,7 +108,7 @@ const AddProduct = () => {
                                     type="text"
                                     name="price"
                                     placeholder="Price"
-                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                    className="input input-bordered w-full  bg-white"
                                 />
                             </div>
                         </div>
@@ -125,7 +126,7 @@ const AddProduct = () => {
                                     type="text"
                                     name="shortDesc"
                                     placeholder="Short Description"
-                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                    className="input input-bordered w-full  bg-white"
                                 />
                             </div>
                             <div className="form-control md:w-1/2 md:ml-4">
@@ -139,7 +140,7 @@ const AddProduct = () => {
                                     type="text"
                                     name="ratings"
                                     placeholder="Ratings"
-                                    className="input input-bordered w-full bg-white dark:bg-[#0d1321]"
+                                    className="input input-bordered w-full  bg-white"
                                 />
                             </div>
                         </div>
@@ -156,7 +157,7 @@ const AddProduct = () => {
                                     type="text"
                                     name="photo"
                                     placeholder="Photo URL"
-                                    className="input input-bordered w-full dark:text-white bg-white dark:bg-[#0d1321]"
+                                    className="input input-bordered w-full  bg-white"
                                 />
                             </div>
                         </div>

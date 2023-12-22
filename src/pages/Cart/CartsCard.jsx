@@ -18,7 +18,8 @@ const CartsCard = ({ cards, renderCart, setRenderCart }) => {
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://brand-shop-server-sepia.vercel.app/cart/${id}`, {
+                fetch(`http://localhost:5000/cart/${id}`, {
+                    credentials: "include",
                     method: "DELETE",
                 })
                     .then((res) => res.json())

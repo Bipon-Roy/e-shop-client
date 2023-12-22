@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Ratings from "./Ratings";
 import { RxUpdate } from "react-icons/rx";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const ProductCard = ({ cards }) => {
     const { _id, photo, name, brandName, type, price, ratings } = cards;
-
+    const { user } = useContext(AuthContext);
     return (
         <div>
             <div className="card lg:card-side bg-white shadow-xl p-4 lg:gap-5 ">
@@ -28,13 +30,15 @@ const ProductCard = ({ cards }) => {
                                     Details
                                 </button>
                             </Link>
-                            <Link to={`/updateProduct/${_id}`}>
-                                <button className="bg-[#eb5e28] px-4 py-1 rounded text-white font-medium">
-                                    <span className="flex items-center gap-1">
-                                        Update <RxUpdate />
-                                    </span>
-                                </button>
-                            </Link>
+                            {user && (
+                                <Link to={`/updateProduct/${_id}`}>
+                                    <button className="bg-[#eb5e28] px-4 py-1 rounded text-white font-medium">
+                                        <span className="flex items-center gap-1">
+                                            Update <RxUpdate />
+                                        </span>
+                                    </button>
+                                </Link>
+                            )}
                             <Link to={`/productDetails/${_id}`}>
                                 <button className="bg-green-500 px-5 py-1 rounded text-white font-medium ">
                                     Buy Now
