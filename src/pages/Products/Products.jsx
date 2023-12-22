@@ -1,14 +1,15 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Slider from "./Slider";
 import ProductCard from "./ProductCard";
-
+//showing products by brand name
 const Products = () => {
     const products = useLoaderData();
     const { brandName } = useParams();
     const newProducts = products.filter(
         (product) => product.brandName.toLowerCase() === brandName.toLowerCase()
     );
-    const isTrue = products.length === 0;
+    //checking if there have any products or not
+    const isTrue = newProducts.length === 0;
     return (
         <div className="dark:bg-[#0d1321]">
             <div className="max-w-7xl mx-auto">
@@ -17,7 +18,7 @@ const Products = () => {
                 </div>
                 {isTrue ? (
                     <div className="flex justify-center mt-10">
-                        <h1 className="text-3xl font-semibold text-[#403d39]">
+                        <h1 className="text-3xl font-semibold">
                             Currently No products are available in this category!!
                         </h1>
                     </div>
