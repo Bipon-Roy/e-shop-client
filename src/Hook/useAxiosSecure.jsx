@@ -5,7 +5,7 @@ import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const axiosSecure = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://brand-shop-server-sepia.vercel.app",
 });
 const useAxiosSecure = () => {
     const navigate = useNavigate();

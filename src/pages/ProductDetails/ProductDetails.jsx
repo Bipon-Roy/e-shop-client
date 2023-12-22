@@ -15,7 +15,6 @@ const ProductDetails = () => {
     const navigate = useNavigate();
 
     const handleAddToCart = () => {
-        console.log(user.email);
         const userEmail = user.email;
 
         const cartItem = {
